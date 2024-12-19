@@ -61,13 +61,13 @@ def jouer():
     case = E.get()
 
     # Récupération des coordonnées de la case
-    chiffre = int(case[0])
-    if len(case)>2:
-        chiffre += 9
+    chiffre = int(case)
 
     # Vérification des coordonnées
     if chiffre < 1 or chiffre > 10:
+        tour_text.set("Le nombre saisie est incorrect \n veuillez entrer un nombre entre 1 et 10")
         raise ValueError("Coordonnées invalides")
+
 
     # Modification de la case
     c.create_rectangle(50*chiffre, 500 , (50*chiffre)+50, 550 ,fill=color)
