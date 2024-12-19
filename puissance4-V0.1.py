@@ -1,5 +1,5 @@
-from glob import glob
-from re import L    
+#from glob import glob
+#from re import L    
 from tkinter import *
 
 
@@ -9,7 +9,7 @@ version = "V0.1"
 fenetre.title(f"Puissance 4, {version}, by BlueSkils")
 fenetre.geometry("650x650")
 
-tour = "0"
+tour = 0
 color = 0
 
 score_J1 = 10
@@ -43,7 +43,7 @@ def draw():
 def jouer():
     global tour
 
-    if tour %2 == 0:
+    if int(tour) %2 == 0:
         color = "red"
     else:
         color = "blue"
