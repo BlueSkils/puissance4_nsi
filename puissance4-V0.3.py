@@ -40,7 +40,7 @@ def draw():
 
 def recup_text(event=None):
     case = E.get()
-    if int(case) >1 and int(case) <10:
+    if int(case) >0 and int(case) <11:
         jouer(int(case))
     else:
         tour_text.set("Veuillez entrer un nombre valide entre 1 et 10.")
