@@ -14,8 +14,8 @@ fenetre.config(bg=color)
 # Variables globales
 grille = [[None for _ in range(10)] for _ in range(10)]  # 10 lignes, 10 colonnes
 tour = 0
-score_J1 = 2
-score_J2 = 1
+score_J1 = 0
+score_J2 = 0
 
 tour_text = StringVar()
 tour_text.set("Au tour de Joueur 1")
@@ -77,7 +77,7 @@ def recup_text(event=None):
 def jouer(case):
     global tour, score_J1, score_J2
 
-    couleur_joueur = "red" if tour % 2 == 0 else "blue"
+    couleur_joueur = "red" if tour % 2 == 0 else "yellow"
     prochain_joueur = "Joueur 2" if tour % 2 == 0 else "Joueur 1"
     tour_text.set(f"Au tour de {prochain_joueur}")
 
@@ -92,7 +92,7 @@ def jouer(case):
                 tour += 1
 
                 if check_victory(ligne, colonne):
-                    vainqueur = "Joueur 1 (Rouge)" if couleur_joueur == "red" else "Joueur 2 (Bleu)"
+                    vainqueur = "Joueur 1 (Rouge)" if couleur_joueur == "red" else "Joueur 2 (yellow)"
                     messagebox.showinfo("Victoire", f"Félicitations ! {vainqueur} a gagné !")
                     if couleur_joueur == "red":
                         score_J1 += 1
